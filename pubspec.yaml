@@ -23,17 +23,27 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   flutter_svg: 0.17.4
   cupertino_icons: ^1.0.2
+  date_format: ^2.0.2
   splashscreen:
 
 dev_dependencies:
+  flutter_launcher_icons: "^0.8.0"
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path_ios: "assets/images/logo.png"
+  image_path_android: "assets/images/logo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -53,18 +63,8 @@ flutter:
 
   assets:
     - assets/images/jf_logo.gif
-    - assets/images/login_bottom.png
     - assets/images/logo.png
-    - assets/images/main_bottom.png
-    - assets/images/main_top.png
-    - assets/images/signup_top.png
-    - assets/images/facebook.png
-    - assets/icons/chat.svg
-    - assets/icons/facebook.svg
-    - assets/icons/google-plus.svg
-    - assets/icons/login.svg
-    - assets/icons/signup.svg
-    - assets/icons/twitter.svg
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

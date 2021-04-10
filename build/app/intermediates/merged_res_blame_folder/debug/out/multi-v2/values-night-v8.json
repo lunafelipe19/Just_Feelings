@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Argo/Documents/TCC/just_feelings/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/Users/Argo/Documents/TCC/Just_Feelings/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/Argo/Documents/TCC/just_feelings/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/Users/Argo/Documents/TCC/Just_Feelings/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

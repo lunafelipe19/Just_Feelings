@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:just_feelings/screens/login_screen.dart';
 import 'package:just_feelings/utils/constants.dart';
+import 'package:intl/intl.dart';
+import 'package:date_format/date_format.dart';
+
 
 class SignupScreen extends StatefulWidget {
   @override
@@ -8,8 +11,26 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+
   @override
   Widget build(BuildContext context) {
+    DateTime selectedDate = DateTime.now();
+    TextEditingController _dateController = TextEditingController();
+    String _setDate;
+
+    Future<Null> _selectDate(BuildContext context) async {
+      final DateTime picked = await showDatePicker(
+          context: context,
+          initialDate: selectedDate,
+          initialDatePickerMode: DatePickerMode.day,
+          firstDate: DateTime(1930),
+          lastDate: DateTime(2101));
+      if (picked != null)
+        setState(() {
+          selectedDate = picked;
+          _dateController.text = DateFormat.yMd().format(selectedDate);
+        });
+    }
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
@@ -89,17 +110,30 @@ class _SignupScreenState extends State<SignupScreen> {
                         focusedBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: kPrimaryColor))),
                   ),
-                  TextField(
-                    decoration: InputDecoration(
-                        labelText: 'DATA DE NASCIMENTO',
-                        labelStyle: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                        // hintText: 'EMAIL',
-                        // hintStyle: ,
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: kPrimaryColor))),
+                  InkWell(
+                    onTap: () {
+                      _selectDate(context);
+                    },
+                    child: Container(
+                      child: TextFormField(
+                        enabled: false,
+                        keyboardType: TextInputType.text,
+                        controller: _dateController,
+                        onSaved: (String val) {
+                          _setDate = val;
+                        },
+                        decoration: InputDecoration(
+                            labelText: 'DATA DE NASCIMENTO',
+                            labelStyle: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey),
+                            // hintText: 'EMAIL',
+                            // hintStyle: ,
+                            focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: kPrimaryColor))),
+                      ),
+                    ),
                   ),
                   SizedBox(height: 50.0),
                   Container(
