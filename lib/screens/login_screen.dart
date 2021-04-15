@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:just_feelings/screens/feed_screen.dart';
 import 'package:just_feelings/screens/sign_up_screen.dart';
 import 'package:just_feelings/utils/constants.dart';
 
@@ -86,7 +87,11 @@ class LoginScreen extends StatelessWidget {
                         color: kPrimaryColor,
                         elevation: 7.0,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.of(context).pushAndRemoveUntil(
+                                MaterialPageRoute(builder: (context) => new FeedScreen()),
+                                    (Route<dynamic> route) => false);
+                          },
                           child: Center(
                             child: Text(
                               'LOGIN',

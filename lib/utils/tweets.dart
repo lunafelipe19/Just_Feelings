@@ -1,0 +1,55 @@
+import 'package:just_feelings/utils/tweet.dart';
+
+var tweets = [
+  Tweet(
+    avatar: 'https://pbs.twimg.com/profile_images/1187814172307800064/MhnwJbxw_400x400.jpg',
+    username: 'Flutter',
+    name: 'FlutterDev',
+    timeAgo: '5m',
+    text: 'Sou o Felipe Luna e esse é um teste parte 1',
+    comments: '243',
+    retweets: '23K',
+    favorites: '112K',
+  ),
+  Tweet(
+    avatar: 'https://pbs.twimg.com/profile_images/1187814172307800064/MhnwJbxw_400x400.jpg',
+    username: 'Flutter',
+    name: 'FlutterDev',
+    timeAgo: '12m',
+    text: 'Sou o Felipe Luna e esse é um teste parte 2',
+    comments: '46',
+    retweets: '4K',
+    favorites: '17K',
+  ),
+  Tweet(
+    avatar: 'https://pbs.twimg.com/profile_images/1168932726461935621/VRtfrDXq_400x400.png',
+    username: 'Android Dev',
+    name: 'AndroidDev',
+    timeAgo: '20m',
+    text: 'Sou o Felipe Luna e esse é um teste parte 3',
+    comments: '305',
+    retweets: '20K',
+    favorites: '1M',
+  ),
+  Tweet(
+    avatar: 'https://pbs.twimg.com/profile_images/808350098178670592/bYyZI8Bp_400x400.jpg',
+    username: 'Google Play',
+    name: 'GooglePlay',
+    timeAgo: '21m',
+    text:
+    'Sou o Felipe Luna e esse é um teste parte 4',
+    comments: '1K',
+    retweets: '70K',
+    favorites: '2M',
+  ),
+  Tweet(
+    avatar: 'https://pbs.twimg.com/profile_images/808350098178670592/bYyZI8Bp_400x400.jpg',
+    username: 'Google',
+    name: 'Google',
+    timeAgo: '26m',
+    text: 'Sou o Felipe Luna e esse é um teste parte 5',
+    comments: '10K',
+    retweets: '500K',
+    favorites: '22M',
+  ),
+];

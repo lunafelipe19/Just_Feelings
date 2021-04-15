@@ -47,7 +47,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(260.0, 50.0, 0.0, 0.0),
+                  padding: EdgeInsets.fromLTRB(285.0, 45.0, 0.0, 0.0),
                   child: Text(
                     '.',
                     style: TextStyle(

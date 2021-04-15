@@ -25,11 +25,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return new SplashScreen(
+    return SplashScreen(
         seconds: 6,
         navigateAfterSeconds: LoginScreen(),
         image: new Image.asset('assets/images/jf_logo.gif'),
         backgroundColor: Colors.white,
+        loaderColor: kPrimaryColor,
         photoSize: 200.0,
     );
   }
