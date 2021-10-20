@@ -33,6 +33,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   date_format: ^2.0.2
   font_awesome_flutter: ^9.0.0
+  image_cropper:
+  video_player:
+  image_picker:
   splashscreen:
 
 dev_dependencies:

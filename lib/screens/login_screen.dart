@@ -4,8 +4,11 @@ import 'package:just_feelings/screens/sign_up_screen.dart';
 import 'package:just_feelings/utils/constants.dart';
 
 class LoginScreen extends StatelessWidget {
+  String emailUser;
+
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Column(
@@ -39,9 +42,11 @@ class LoginScreen extends StatelessWidget {
             ),
             Container(
                 padding: EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
+                child: Form(
+                  key: formKey,
                 child: Column(
                   children: <Widget>[
-                    TextField(
+                    TextFormField(
                       decoration: InputDecoration(
                           labelText: 'E-MAIL',
                           labelStyle: TextStyle(
@@ -50,9 +55,15 @@ class LoginScreen extends StatelessWidget {
                               color: Colors.grey),
                           focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: kPrimaryColor))),
+                      // ignore: missing_return
+                      validator: (String value) {
+                        if(value == null || value.isEmpty) {
+                          return 'E-mail Obrigatório';
+                        }
+                     },
                     ),
                     SizedBox(height: 20.0),
-                    TextField(
+                    TextFormField(
                       decoration: InputDecoration(
                           labelText: 'SENHA',
                           labelStyle: TextStyle(
@@ -61,6 +72,12 @@ class LoginScreen extends StatelessWidget {
                               color: Colors.grey),
                           focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: kPrimaryColor))),
+                      // ignore: missing_return
+                      validator: (String value) {
+                        if(value == null || value.isEmpty) {
+                          return 'Senha Obrigatória';
+                        }
+                      },
                       obscureText: true,
                     ),
                     SizedBox(height: 5.0),
@@ -88,9 +105,11 @@ class LoginScreen extends StatelessWidget {
                         elevation: 7.0,
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.of(context).pushAndRemoveUntil(
-                                MaterialPageRoute(builder: (context) => new FeedScreen()),
-                                    (Route<dynamic> route) => false);
+                            if(formKey.currentState.validate()) {
+                              Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(builder: (context) => new FeedScreen()),
+                                      (Route<dynamic> route) => false);
+                            }
                           },
                           child: Center(
                             child: Text(
@@ -106,7 +125,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 20.0),
                   ],
-                )),
+                ))),
             SizedBox(height: 15.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -135,5 +154,6 @@ class LoginScreen extends StatelessWidget {
             )
           ],
         ));
+
   }
 }
