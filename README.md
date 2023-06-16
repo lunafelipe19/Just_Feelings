@@ -1,6 +1,6 @@
 # just_feelings
 
-A new Flutter application.
+Aplicativo desenvolvido para apresentação do meu TCC na FAM (Faculdade das Américas) no curso de Ciência da Computação no ano de 2020.
 
 ## Getting Started
 
